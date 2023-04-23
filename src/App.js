@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-
+import RoutesComponent from './RoutesComponent';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 function App() {
+
+  var perfEntries = performance.getEntriesByType("navigation");
+  const location=useLocation();
+  useEffect(()=>{
+
+    if (perfEntries[0].type === "back_forward") {
+        location.reload();
+    }
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{width:"100vw",overflowX:"hidden !important"}}>
+      <RoutesComponent/>
     </div>
   );
 }
