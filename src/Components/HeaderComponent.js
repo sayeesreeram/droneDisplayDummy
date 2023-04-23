@@ -54,7 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function HeaderComponent(props) {
     const navigate = useNavigate()
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1,position:"relative" }}>
             <AppBar position="static" sx={{ backgroundColor: "#66D3FA", width: "100vw" }}>
                 <Toolbar>
                     <Search >
@@ -73,7 +73,7 @@ export default function HeaderComponent(props) {
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ width: "100vw", textAlign: "center", flexGrow: 1, color: "#0F5298 !important", font: "30px work sans", fontWeight: "600", display: { xs: 'none', sm: 'block' } }}
+                        sx={{ left:"45vw", position:"absolute",textAlign: "center",alignItems:"center",justifyContent:"center", flexGrow: 1, color: "#0F5298 !important", font: "30px work sans", fontWeight: "600", display: { xs: 'none', sm: 'block' } }}
                     >
                         Drone Display Cards
                     </Typography>
@@ -82,7 +82,7 @@ export default function HeaderComponent(props) {
                         noWrap
                         component="div"
                         onClick={() => { navigate("/");window.location.reload() }}
-                        sx={{ width: "auto", overflow: "visible", cursor: "pointer", textAlign: "center", flexGrow: 1, color: "#0F5298 !important", font: "20px work sans", fontWeight: "600", display: { xs: 'none', sm: 'block' } }}
+                        sx={{ position:"absolute",right:"20px", overflow: "visible", cursor: "pointer", textAlign: "center", flexGrow: 1, color: "#0F5298 !important", font: "20px work sans", fontWeight: "600", display: { xs: 'none', sm: 'block' } }}
                     >
                         Logout
                     </Typography>
