@@ -5,7 +5,7 @@ import img1 from "../images/img1.jpg"
 
 function Card({ data, src,index,handleClick }) {
     return (
-        <StyledCardContainer onClick={()=>handleClick(index)}>
+        <StyledCardContainer>
 
             <img src={require(`../images/${src}.jpg`)} style={{ width: "350px", height: "500px", display: "flex", justifyContent: "center", margin: "0px 0px", textAlign: "center", flexGrow: 1, }} alt="image" />
             <div>
